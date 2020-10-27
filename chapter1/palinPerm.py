@@ -1,7 +1,7 @@
-# Return true if permutation is a palindrome, false is not 
+# Return true if permutation is a palindrome, false is not
 
-# to solve this problem, every character except for 1 character must appear even number of times, 
-# or every character appears an even number of times. 
+# to solve this problem, every character except for 1 character must appear even number of times,
+# or every character appears an even number of times.
 
 
 def palinPerm(string):
@@ -10,7 +10,7 @@ def palinPerm(string):
     mulligan = False
     isPerm = True
 
-    arr = [i for i in string]
+    arr = [i for i in string]  # make array of char in string
     for char in arr:
         if (char != ' '):
             currChar = char.lower()
@@ -25,7 +25,8 @@ def palinPerm(string):
             if (mulligan):
                 isPerm = False
             else:
-                mulligan = True # first time a char appears odd num of times, mulligan is false so isPerm is still true, but second time is True, so isPerm is false.
+                # first time a char appears odd num of times, mulligan is false so isPerm is still true, but second time is True, so isPerm is false.
+                mulligan = True
 
     return isPerm
 

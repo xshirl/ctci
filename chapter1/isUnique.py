@@ -1,19 +1,14 @@
 # Determine if a string has all unique characters.
 
-def isUnique(str):
-    dic = {}
 
+def isUnique(str):
+    letters = {}
     for char in str:
-        if not char in dic:
-            dic[char] = 1
-        else:
-            dic[char] += 1
-    
-    for keys, values in dic.items():
-        if values > 1:
+        if char in letters:
             return False
-        else:
-            return True
+        letters[char] = True
+    return True
+
 
 print(isUnique('AAb'))
-print(isUnique('ab'))
+print(isUnique('abb'))
