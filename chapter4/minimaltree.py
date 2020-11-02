@@ -30,6 +30,15 @@ def minimal_height_bst(arr):
     return BSTNode(arr[mid], left, right)
 
 
+def minimalHeightBST(arr):
+    if len(arr) == 0:
+        return None
+    mid = len(arr) // 2
+    left = minimalHeightBST(arr[:mid])
+    right = minimalHeightBST(arr[(mid+1):])
+    return BSTNode(arr[mid], left, right)
+
+
 class Test(unittest.TestCase):
     def test_minimal_height_bst(self):
         sorted_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]

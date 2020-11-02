@@ -11,3 +11,13 @@ def loopDetection(head):
         node = node.next
 
     return None
+
+
+def loopDetection2(head):
+    node = head
+    nodes = {}
+    while node:
+        if node in nodes:
+            return node
+        nodes[node] = True
+    return None
